@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スナックポレポレDIY | 02.20 一夜限りの開店</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&family=Noto+Serif+JP:wght@900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --snack-purple: #1a0033;
+            --neon-pink: #ff00ff;
+            --neon-purple: #9d00ff;
+            --gold: #d4af37;
+            --text-white: #ffffff;
+        }
+
+        body {
+            background-color: var(--snack-purple);
+            color: var(--text-white);
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            margin: 0;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* 粒子ノイズ（レトロな質感） */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(https://www.transparenttextures.com/patterns/stardust.png);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        /* 1. ヒーローセクション */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to top, var(--snack-purple), transparent 60%),
+                url('images/Gemini_Generated_Image_dhp9sldhp9sldhp9.png');
+            background-size: cover;
+            background-position: center;
+            padding-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(2.5rem, 12vw, 6rem);
+            line-height: 1.1;
+            margin: 0;
+            text-shadow: 0 0 15px var(--neon-pink), 0 0 30px var(--neon-purple);
+        }
+
+        /* 2. 何のイベントか？（INTRO） */
+        .intro-section {
+            background: linear-gradient(180deg, var(--snack-purple) 0%, #2d004d 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .event-definition {
+            font-size: 1.4rem;
+            color: var(--neon-pink);
+            border: 2px solid var(--neon-pink);
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 30px;
+            transform: rotate(-1deg);
+        }
+
+        /* 共通セクション */
+        section {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            color: var(--gold);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+            margin: 10px auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 4px;
+            margin-bottom: 40px;
+        }
+
+        /* 3. ポレポレDIYとは？（DIY SECTION） */
+        .diy-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .diy-visual img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid var(--gold);
+        }
+
+        /* 4. メニュー */
+        .charge-box {
+            text-align: center;
+            border: 2px double var(--gold);
+            padding: 20px;
+            margin-bottom: 40px;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #444;
+            margin-bottom: 15px;
+        }
+
+        /* ボタン関係 */
+        .btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+        }
+
+        .btn-youtube {
+            background: #ff0000;
+            color: white;
+        }
+
+        .cta-fixed {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .btn-main {
+            display: block;
+            background: var(--neon-pink);
+            color: white;
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 120px;
+            opacity: 0.4;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <div
+            style="background: var(--neon-pink); padding: 5px 20px; transform: rotate(-2deg); margin-bottom: 10px; font-weight: bold;">
+            2026.02.20 FRI OPEN</div>
+        <h1>スナック<br>ポレポレDIY</h1>
+        <p style="margin-top: 15px; letter-spacing: 0.2em;">@ SPICE TO HITO (TSURUOKA)</p>
+    </div>
+
+    <div class="intro-section">
+        <div class="event-definition">一夜限りの「リアルな居場所」</div>
+        <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+            <p>画面の中で空き家を直しているママが、今夜はスナックのカウンターに立ちます。</p>
+            <p>これは、単なる飲食店イベントではありません。衰退していく商店街に灯をともし、前向きな人たちが繋がり、明日への刺激を持ち帰るための「ポジティブな溜まり場」です。</p>
+            <p>美味しいお酒とスパイス、そして「ここから何かが始まる」というワクワクを共有しましょう。</p>
+        </div>
+    </div>
+
+    <section id="what-is-diy">
+        <h2>ポレポレDIYとは？</h2>
+        <div class="card">
+            <p>山形県鶴岡市、銀座通り商店街。かつての賑わいを失ったシャッター通りを舞台に、空き家再生やDIYの様子を発信しているYouTubeチャンネルです。</p>
+            <p><strong>「ゆっくりでも、着実に（ポレポレ）」</strong><br>
+                自分たちの手で街を面白くしていく過程を、DIYを通して記録しています。今回のスナックも、そんな街づくりの一つのカタチです。</p>
+
+            <div class="diy-visual">
+                <img src="http://googleusercontent.com/image_generation_content/5" alt="DIYの様子">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a4e5190?auto=format&fit=crop&w=400&q=80"
+                    alt="工具と再生">
+            </div>
+            <a href="https://www.youtube.com/channel/UCBkVbgLgVZ473QViK_dtMyw" class="btn btn-youtube"
+                target="_blank">YouTubeで活動を見る</a>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2>SYSTEM & MENU</h2>
+        <div class="charge-box">
+            <span style="font-size: 0.9rem; color: var(--gold);">ENTRANCE CHARGE</span><br>
+            <span style="font-size: 2rem; font-weight: bold;">¥2,000</span>
+        </div>
+        <div class="card">
+            <div class="menu-item"><span>ママ特製・ポレポレおつまみ盛</span><span>¥800</span></div>
+            <div class="menu-item"><span>自家製クラフト・ポレポレコーラ</span><span>¥800</span></div>
+            <div class="menu-item"><span>空き家からの秘蔵酒</span><span>ASK</span></div>
+            <p style="font-size: 0.8rem; color: var(--gold); text-align: center; margin-top: 20px;">
+                ※その他、スパイスを活かしたドリンクを多数ご用意しております</p>
+        </div>
+    </section>
+
+    <section id="access">
+        <h2>ACCESS</h2>
+        <div class="card" style="text-align: center;">
+            <p><strong>スパイスとヒト</strong></p>
+            <p>山形県鶴岡市本町１丁目７−１８ 2階</p>
+            <a href="https://www.instagram.com/spice_tsuruoka/" class="btn btn-insta" target="_blank">Instagramを開く</a>
+            <div
+                style="margin-top: 20px; border: 1px solid var(--gold); height: 200px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 0.8rem; opacity: 0.6;">Google Map をここに埋め込む</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-fixed">
+        <a href="https://www.instagram.com/spice_tsuruoka/" class="btn-main">最新情報はSNSをチェック！</a>
+    </div>
+
+    <footer>
+        <p>© 2026 スナックポレポレDIY<br>銀座通り商店街再生プロジェクト</p>
+    </footer>
+
+</body>
+
+</html>
