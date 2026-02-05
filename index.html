@@ -169,10 +169,19 @@
             position: fixed;
             bottom: 20px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) translateY(20px);
             z-index: 1000;
             width: 90%;
             max-width: 400px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s ease;
+        }
+
+        .cta-fixed.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(0);
         }
 
         .btn-main {
@@ -267,6 +276,17 @@
     <footer>
         <p>© 2026 スナックポレポレDIY<br>銀座通り商店街再生プロジェクト</p>
     </footer>
+
+    <script>
+        document.addEventListener('scroll', function () {
+            const cta = document.querySelector('.cta-fixed');
+            if (window.scrollY > 300) {
+                cta.classList.add('visible');
+            } else {
+                cta.classList.remove('visible');
+            }
+        });
+    </script>
 
 </body>
 
