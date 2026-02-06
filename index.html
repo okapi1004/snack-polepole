@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>スナックポレポレDIY | 02.20 一夜限りの開店</title>
+
+    <!-- OGP Settings -->
+    <meta property="og:title" content="スナックポレポレDIY | 02.20 一夜限りの開店">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/"> <!-- TODO: 公開URLに変更してください -->
+    <meta property="og:image" content="https://your-domain.com/images/02.jpg"> <!-- TODO: 絶対パス推奨 -->
+    <meta property="og:site_name" content="スナックポレポレDIY">
+    <meta property="og:description"
+        content="一夜限りの「リアルな居場所」。画面の中で空き家を直しているママが、今夜はスナックのカウンターに立ちます。@ SPICE TO HITO (TSURUOKA)">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="スナックポレポレDIY | 02.20 一夜限りの開店">
+    <meta name="twitter:description" content="一夜限りの「リアルな居場所」。画面の中で空き家を直しているママが、今夜はスナックのカウンターに立ちます。">
+    <meta name="twitter:image" content="https://your-domain.com/images/02.jpg">
     <link
         href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&family=Noto+Serif+JP:wght@900&display=swap"
         rel="stylesheet">
@@ -202,6 +217,66 @@
             opacity: 0.4;
             font-size: 0.8rem;
         }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            aspect-ratio: 1 / 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Messages */
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .message-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--neon-pink);
+            position: relative;
+        }
+
+        .message-card::before {
+            content: "“";
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 4rem;
+            opacity: 0.1;
+            font-family: serif;
+            line-height: 0;
+        }
+
+        .message-from {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--gold);
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -259,6 +334,46 @@
             <div class="menu-item"><span>空き家からの秘蔵酒</span><span>ASK</span></div>
             <p style="font-size: 0.8rem; color: var(--gold); text-align: center; margin-top: 20px;">
                 ※その他、スパイスを活かしたドリンクを多数ご用意しております</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>GALLERY</h2>
+        <div class="card">
+            <p style="text-align: center; margin-bottom: 20px;">これまでのDIYと、スナックの軌跡。</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/02.jpg" alt="Gallery 1"></div>
+                <div class="gallery-item"><img src="images/03.jpg" alt="Gallery 2"></div>
+                <div class="gallery-item"><img src="images/Gemini_Generated_Image_dhp9sldhp9sldhp9.png" alt="Gallery 3">
+                </div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=400&q=80"
+                        alt="Gallery 4"></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1514362545857-3bc16549766b?auto=format&fit=crop&w=400&q=80"
+                        alt="Gallery 5"></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=400&q=80"
+                        alt="Gallery 6"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="messages">
+        <h2>VOICE</h2>
+        <div class="message-container" style="max-width: 800px; margin: 0 auto;">
+            <div class="message-card">
+                <p>「商店街を通るたび、何ができるんだろう？と楽しみにしていました。一夜限りと言わず、続けてほしい！」</p>
+                <div class="message-from">ご近所さん A様</div>
+            </div>
+            <div class="message-card" style="border-left-color: var(--neon-purple);">
+                <p>「DIYの動画を見てファンになりました。ママにリアルで会えるのが楽しみです。」</p>
+                <div class="message-from">YouTube視聴者 B様</div>
+            </div>
+            <div class="message-card" style="border-left-color: var(--gold); background: rgba(212, 175, 55, 0.1);">
+                <p>【ママより】<br>不器用ながらも、一つひとつ壁を塗り、床を貼ってきました。この空間で皆さんと乾杯できること、心から楽しみにしています。</p>
+                <div class="message-from">スナックママ</div>
+            </div>
         </div>
     </section>
 
